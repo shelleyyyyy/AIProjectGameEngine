@@ -21,7 +21,7 @@ class Location:
         return "x: " + self.x + ", y: " + self.y
 
     def clone(self):
-        return self.clone()
+        return copy(self)
         
     def equals(self, o):
         if o == None:
@@ -37,3 +37,12 @@ class Location:
             return True
 
         return False
+
+
+loc = Location(1, 2)
+loc2 = loc.clone()
+print(loc.equals(loc2))
+loc.setX(5)
+print(loc.equals(loc2))
+print(loc.getX())
+print(loc.getY())
