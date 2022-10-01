@@ -6,7 +6,7 @@ class TruckAgent:
     def __init__(self):
         self.agentId
         self.movable = False
-        self.direction = 1
+        self.direction = Constants.FACING_WEST
         self.location = Location
 
     def setUUID(self, agentId):
