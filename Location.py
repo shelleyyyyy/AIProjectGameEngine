@@ -21,7 +21,7 @@ class Location:
         return "x: " + self.x + ", y: " + self.y
 
     def clone(self):
-        return self.clone()
+        return copy(self)
         
     def equals(self, o):
         if o == None:

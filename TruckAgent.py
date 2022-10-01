@@ -1,11 +1,12 @@
 from Location import Location
 from copy import copy
+import Constants
 
 class TruckAgent:
     def __init__(self):
         self.agentId
         self.movable = False
-        self.direction = "FACING_WEST"
+        self.direction = 1
         self.location = Location
 
     def setUUID(self, agentId):
@@ -33,9 +34,11 @@ class TruckAgent:
         return self.location
 
     # FLIP TRUCK
+    def flipTruck(self):
+        self.setDirection((self.direction + 2) % 4)
 
     def clone(self):
-        truckAgentClone = self.clone()
+        truckAgentClone = copy(self)
         truckAgentClone.location = self.location.clone()
 
         return truckAgentClone
